@@ -1,10 +1,8 @@
 public class TestClient {
-    static {
-        System.loadLibrary("printer");
-    }
-
-    public static void main(String[] args) {
-        final MessagePrinter printer = new MessagePrinter();
-        printer.printMsg("HelloWorld!");
-    }
-}
+   public static void main(String argv[]) {
+     System.loadLibrary("example");
+     System.out.println(example.getMy_variable());
+     System.out.println(example.fact(5));
+     System.out.println(example.get_time());
+   }
+ }
