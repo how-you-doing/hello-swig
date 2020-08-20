@@ -16,7 +16,9 @@ Create a SWIG interface ".i" file
 ## 3. SWIG command
 Use `swig` command to generate `java` file
 
-```swig -java example.i```
+```
+swig -java example.i
+```
 
 - This will generate 3 files
     1. example_wrap.c
@@ -26,7 +28,9 @@ Use `swig` command to generate `java` file
 ## 4. Create a shared lib
 - compile `example.c` and `example_wrap.c` using
 
-```gcc -fPIC -I/usr/lib/jvm/java-1.8.0-openjdk-amd64/include/ -I/usr/lib/jvm/java-1.8.0-openjdk-amd64/include/linux -shared -o libexample.so example.c example_wrap.c```
+```
+gcc -fPIC -I/usr/lib/jvm/java-1.8.0-openjdk-amd64/include/ -I/usr/lib/jvm/java-1.8.0-openjdk-amd64/include/linux -shared -o libexample.so example.c example_wrap.c
+```
 
 - This will output the shared lib `libexample.so`
 
@@ -36,11 +40,15 @@ Use `swig` command to generate `java` file
 - ex: `TestClient.java`
 - compile the java file by
 
-```javac TestClient.java```
+```
+javac TestClient.java
+```
 
 - run the program by
 
-```java -Djava.library.path=. TestClient```
+```
+java -Djava.library.path=. TestClient
+```
 
 
 ## References
